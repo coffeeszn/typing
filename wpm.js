@@ -24,9 +24,3 @@ function capturedTimeCheck() {
         capturedTime = floor(secondsElapsed);
     }
 }
-
-
-function displayWpm() {
-    currentWpm = (currentWordIndex / (secondsElapsed / 60)).toFixed(2);
-    text(("current wpm: " + currentWpm), (width / 2) - 175, 50);
-}

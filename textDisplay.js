@@ -1,10 +1,11 @@
 
 function displayText() {
     let x = xPos;
-    let y = 300;
+    let y = 450;
     let words = targetText.split(" "); // Split text into words
     
     noStroke();
+    strokeWeight
     textSize(32);
     let charIndex = 0;
   
@@ -21,13 +22,11 @@ function displayText() {
       for (let char of word + " ") { // Include space as part of the word
         // Apply color based on user input
         if (userInput[charIndex] === char) {
-          stroke(0);
-          strokeWeight(1);
-          fill(0, 140, 0);
+          fill(170, 150, 150);
         } else if (userInput[charIndex] !== undefined) {
-          fill(180, 0, 0);
+          fill(100, 0, 0);
         } else {
-          fill(50, 50, 50);
+          fill(70, 70, 70);
         }
   
         text(char, x, y);

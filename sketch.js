@@ -16,7 +16,7 @@ let finished = false;
 let nextIconButton;
 let nextButtonImage;
 let whatever;
-let xPos = 350;
+let xPos = 450;
 
 
 function preload() {
@@ -49,7 +49,7 @@ function setup() {
   textAlign(LEFT, LEFT);
   filteredWords = wordList.filter(word => word.length > 3);
   textGenerator();
-  maxLineWidth = width - 350;
+  maxLineWidth = width - xPos;
   textFont(myFont);
   createNextIconButton();
   nextIconButton.hide();
@@ -57,7 +57,7 @@ function setup() {
 
 
 function draw() {
-  background(155);
+  background(40);
   displayUI();
   capturedTimeCheck();
   timer();
@@ -68,18 +68,28 @@ function draw() {
 function createNextIconButton() {
   // Ensure the path is correct relative to your project folder
   nextIconButton = createImg("nextButton.png", "Next Button");
-  nextIconButton.position(width / 2 - 25, height / 2 + 200); // Adjust position
-  nextIconButton.size(50, 50);
+  nextIconButton.position(width / 2 - 20, height / 2 + 200); // Adjust position
+  nextIconButton.size(40, 40);
   nextIconButton.style('border', 'none');
 
+  nextIconButton.mouseOver(() => {
+    nextIconButton.position(width / 2 - 30, height / 2 + 190);
+    nextIconButton.size(60, 60);
+  })
+
+  nextIconButton.mouseOut(() => {
+    nextIconButton.position(width / 2 - 20, height / 2 + 200);
+    nextIconButton.size(40, 40);
+  })
   // Add click event to trigger the resetTest function
   nextIconButton.mousePressed(resetTest);
 }
 
 
 function finishCheck() {
-  if (userInput.length === targetText.length && finished === false) {
+  if (userInput.length >= targetText.length && finished === false) {
     finalWpm = currentWpm;
+    finalWpmString = finalWpm.toString();
     finished = true;
   } 
 }
