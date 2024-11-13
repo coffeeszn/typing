@@ -13,10 +13,10 @@ let lineHeight = 65;
 let maxLineWidth;
 let currentLineIndex = 0;
 let finished = false;
-let nextIconButton;
 let nextButtonImage;
 let whatever;
-let xPos = 450;
+let xPos = 500;
+let nextIconButton;
 
 
 function preload() {
@@ -47,11 +47,12 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   textAlign(LEFT, LEFT);
-  filteredWords = wordList.filter(word => word.length > 3);
+  filteredWords = wordList.filter(word => word.length > 3 && word.length < 8);
   textGenerator();
-  maxLineWidth = width - xPos;
+  maxLineWidth = width - xPos + 100;
   textFont(myFont);
-  createNextIconButton();
+  nextIconButton = new NextIconButton(width / 2 - 20, height / 2 + 100);
+  nextIconButton.createButton();
   nextIconButton.hide();
 }
 
@@ -62,27 +63,6 @@ function draw() {
   capturedTimeCheck();
   timer();
   finishCheck();
-}
-
-
-function createNextIconButton() {
-  // Ensure the path is correct relative to your project folder
-  nextIconButton = createImg("nextButton.png", "Next Button");
-  nextIconButton.position(width / 2 - 20, height / 2 + 200); // Adjust position
-  nextIconButton.size(40, 40);
-  nextIconButton.style('border', 'none');
-
-  nextIconButton.mouseOver(() => {
-    nextIconButton.position(width / 2 - 30, height / 2 + 190);
-    nextIconButton.size(60, 60);
-  })
-
-  nextIconButton.mouseOut(() => {
-    nextIconButton.position(width / 2 - 20, height / 2 + 200);
-    nextIconButton.size(40, 40);
-  })
-  // Add click event to trigger the resetTest function
-  nextIconButton.mousePressed(resetTest);
 }
 
 
@@ -128,5 +108,8 @@ function resetTest() {
   falseTime = null;
   textGenerator();
   started = false;
+  textAlpha = 0;
+  endAlpha = 0;
+  ratioY = 330;
   nextIconButton.hide();
 }

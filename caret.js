@@ -1,10 +1,14 @@
+let caretAlpha = 0;
+
 function displayCaret() {
   textSize(32);
   let x = xPos; // Starting x position
-  let y = 458;  // Starting y position
+  let y = 388;  // Starting y position
   const words = targetText.split(" "); // Split target text into words
   
   let charIndex = 0;
+
+  caretAlpha = lerp(caretAlpha, 255, 0.05);
 
   // Loop through each word to determine caret position based on user input length
   for (let word of words) {
@@ -22,7 +26,7 @@ function displayCaret() {
       if (charIndex === userInput.length) {
         if (caretVisible) {
           strokeWeight(1);
-          stroke(255); // Set stroke color for caret
+          stroke(255, 255, 255, caretAlpha); // Set stroke color for caret
           line(x, y, x + textWidth(char), y); // Draw caret as a vertical line
         }
         strokeWeight(0);
