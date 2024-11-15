@@ -25,7 +25,7 @@ function displayText() {
       for (let char of word + " ") { // Include space as part of the word
         // Apply color based on user input
         if (userInput[charIndex] === char) {
-          fill(170, 150, 150, textAlpha);
+          fill(190, 170, 170, textAlpha);
         } else if (userInput[charIndex] !== undefined) {
           fill(100, 0, 0, textAlpha);
         } else {

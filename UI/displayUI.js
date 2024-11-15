@@ -1,12 +1,19 @@
 function displayUI() {
     if (finished !== true && started !== true) {
         displayText();
+        wordButtonShow();
+        buttonTen.updateSize();
+        buttonTwenty.updateSize();
+        buttonFifty.updateSize();
+        buttonHundred.updateSize();
     } else if (finished !== true && started === true) {
         displayText();
         displayCaret();
         ratioDisplay();
         // timerDisplay();
         displayWpm();
+        wordButtonHide();
+
     } else if (finished) {
         endStatsUI();
         nextIconButton.updateSize();
@@ -29,7 +36,7 @@ function ratioDisplay () {
     ratioAlpha = lerp(ratioAlpha, 255, 0.08);
     ratioY = lerp(ratioY, 310, 0.25);
     textSize(28);
-    fill(170, 150, 150, ratioAlpha);
+    fill(190, 170, 170, ratioAlpha);
     if (started === true) {
         text((currentWordIndex + ' / ' + (maxWords + 1)), xPos, ratioY);
     }   
@@ -64,6 +71,6 @@ function endStatsWpm() {
 
 function endStatsTime() {
     textSize(28);
-    fill(170, 150, 150, endAlpha)
+    fill(190, 170, 170, endAlpha)
     text(('Time: ' + capturedTime + ' sec.'), (width / 2) - 200, (height / 2) - 50);
 }

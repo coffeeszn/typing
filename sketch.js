@@ -51,9 +51,7 @@ function setup() {
   textGenerator();
   maxLineWidth = width - xPos + 100;
   textFont(myFont);
-  nextIconButton = new NextIconButton(width / 2 - 20, height / 2 + 100);
-  nextIconButton.createButton();
-  nextIconButton.hide();
+  makeTheButtons();
 }
 
 

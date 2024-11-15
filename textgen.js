@@ -1,7 +1,6 @@
-let maxWords;
+let maxWords = 9;
 
 function textGenerator() {
-  maxWords = 9;
     for (let i = 0; i <= maxWords; i++){
       targetText += (' ' + (random(filteredWords)));
     }
