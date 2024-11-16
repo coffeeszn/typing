@@ -32,6 +32,7 @@ function displayUI() {
 let ratioAlpha = 0;
 let ratioY = 330;
 
+
 function ratioDisplay () {
     ratioAlpha = lerp(ratioAlpha, 255, 0.08);
     ratioY = lerp(ratioY, 310, 0.25);
@@ -55,7 +56,9 @@ function displayWpm() {
     text(("current wpm: " + currentWpm), (width / 2) - 175, 50);
 }
 
+
 let endAlpha = 0;
+
 
 function endStatsWpm() {
 
@@ -68,6 +71,7 @@ function endStatsWpm() {
     textSize(22);
     text('.' + afterDot, (width / 2) - 200 + whateverSize, height / 2);
 }
+
 
 function endStatsTime() {
     textSize(28);

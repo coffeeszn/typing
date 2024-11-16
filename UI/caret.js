@@ -1,7 +1,7 @@
 let caretAlpha = 0;
 
 function displayCaret() {
-  textSize(32);
+  textSize(35);
   let x = xPos; // Starting x position
   let y = 388;  // Starting y position
   const words = targetText.split(" "); // Split target text into words

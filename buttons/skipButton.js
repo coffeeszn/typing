@@ -85,7 +85,7 @@ class WordAmountButton extends CustomButton {
         this.targetFontSize = this.defaultFontSize;
         this.textFont = myFont;
 
-        this.defaultColor = color(0, 0, 0);
+        this.defaultColor = color(70, 70, 70);
         this.currentColor = this.defaultColor;
         this.targetColor = this.defaultColor;
         this.wordButtonAlpha = 255;
@@ -130,7 +130,7 @@ class WordAmountButton extends CustomButton {
 
     onMouseOver() {
         this.targetFontSize = this.defaultFontSize * this.targetMultiplier;
-        this.targetColor = color(140, 140, 140);
+        this.targetColor = color(220, 220, 220);
     }
 
     onMouseOut() {
