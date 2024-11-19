@@ -8,26 +8,26 @@ function makeTheButtons() {
 
     const central = width / 2;
 
-    buttonTen = new WordAmountButton('10', central - 125, 285, buttonWidth, buttonHeight, () => { maxWords = 9}, 1.3);
+    buttonFive = new WordAmountButton('5', central - 125, 285, buttonWidth, buttonHeight, () => { maxWords = 4}, 1.3);
+    buttonFive.createButton();
+    buttonTen = new WordAmountButton('10', central - 50, 285, buttonWidth, buttonHeight, () => { maxWords = 9}, 1.3);
     buttonTen.createButton();
-    buttonTwenty = new WordAmountButton('20', central - 50, 285, buttonWidth, buttonHeight, () => { maxWords = 19}, 1.3);
-    buttonTwenty.createButton();
-    buttonFifty = new WordAmountButton('50', central + 25, 285, buttonWidth, buttonHeight, () => { maxWords = 49}, 1.7);
-    buttonFifty.createButton();
-    buttonHundred = new WordAmountButton('100', central + 100, 285, buttonWidth, buttonHeight, () => { maxWords = 99}, 2.0);
-    buttonHundred.createButton();
+    buttonFifteen = new WordAmountButton('15', central + 25, 285, buttonWidth, buttonHeight, () => { maxWords = 14}, 1.7);
+    buttonFifteen.createButton();
+    buttonTwentyFive = new WordAmountButton('25', central + 100, 285, buttonWidth, buttonHeight, () => { maxWords = 99}, 2.0);
+    buttonTwentyFive.createButton();
 }
 
 function wordButtonHide() {
+    buttonFive.hide();
     buttonTen.hide();
-    buttonTwenty.hide();
-    buttonFifty.hide();
-    buttonHundred.hide();
+    buttonFifteen.hide();
+    buttonTwentyFive.hide();
 }
 
 function wordButtonShow() {
+    buttonFive.show();
     buttonTen.show();
-    buttonTwenty.show();
-    buttonFifty.show();
-    buttonHundred.show();
+    buttonFifteen.show();
+    buttonTwentyFive.show();
 }

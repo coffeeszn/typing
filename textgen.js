@@ -1,4 +1,4 @@
-let maxWords = 9;
+let maxWords = 4;
 
 function textGenerator() {
     for (let i = 0; i <= maxWords; i++){

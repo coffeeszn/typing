@@ -46,7 +46,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   textAlign(LEFT, LEFT);
-  filteredWords = wordList.filter(word => word.length > 3 && word.length < 8);
+  filteredWords = wordList.filter(word => word.length > 4 && word.length < 7);
   textGenerator();
   maxLineWidth = width - xPos + 100;
   textFont(myFont);
@@ -99,6 +99,8 @@ function resetTest() {
   finished = false;
   userInput = '';
   targetText = '';
+  y = 300;
+  timesReset = 0;
   currentCharIndex = 0;
   currentWordIndex = 0;
   secondsElapsed = 0;

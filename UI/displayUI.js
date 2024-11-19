@@ -2,13 +2,12 @@ function displayUI() {
     if (finished !== true && started !== true) {
         displayText();
         wordButtonShow();
+        buttonFive.updateSize();
         buttonTen.updateSize();
-        buttonTwenty.updateSize();
-        buttonFifty.updateSize();
-        buttonHundred.updateSize();
+        buttonFifteen.updateSize();
+        buttonTwentyFive.updateSize();
     } else if (finished !== true && started === true) {
         displayText();
-        displayCaret();
         ratioDisplay();
         // timerDisplay();
         displayWpm();
